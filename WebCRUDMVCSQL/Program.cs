@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using WebCRUDMVCSQL.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<Context>(options => options.UseSqlServer("Data Source=DESKTOP-S42DPI7;Initial Catalog=CRUD_MVC_SQL;Integrated Security=True"));
 
 var app = builder.Build();
 
